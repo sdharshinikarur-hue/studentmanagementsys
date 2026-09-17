@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Student Management System</h1>
+      <p class="subtitle">CRUD demo — HTML · CSS · JavaScript · Django REST Framework</p>
+    </header>
+
+    <main>
+      <section class="card form-card">
+        <h2 id="form-title">Add Student</h2>
+        <form id="student-form" novalidate>
+          <input type="hidden" id="student-id" />
+
+          <div class="form-row">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" required />
+            <span class="error" id="err-first_name"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" required />
+            <span class="error" id="err-last_name"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+            <span class="error" id="err-email"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="course">Course</label>
+            <input type="text" id="course" required />
+            <span class="error" id="err-course"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="age">Age</label>
+            <input type="number" id="age" min="15" max="100" required />
+            <span class="error" id="err-age"></span>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="submit-btn">Add Student</button>
+            <button type="button" id="cancel-btn" class="secondary hidden">Cancel</button>
+          </div>
+
+          <p id="form-message" class="message"></p>
+        </form>
+      </section>
+
+      <section class="card list-card">
+        <div class="list-header">
+          <h2>Students</h2>
+          <input type="search" id="search-box" placeholder="Search by name, email or course..." />
+        </div>
+
+        <div id="table-wrapper">
+          <table id="student-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Age</th>
+                <th>Enrolled</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="student-table-body">
+              <!-- rows injected by script.js -->
+            </tbody>
+          </table>
+          <p id="empty-state" class="hidden">No students found.</p>
+          <p id="loading-state">Loading students...</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
